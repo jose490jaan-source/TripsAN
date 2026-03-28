@@ -1,0 +1,97 @@
+package TalonarioConsola.service;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
+import java.util.LinkedList;
+import java.util.List;
+
+import TalonarioConsola.model.Talonario;
+
+
+public class TalonarioServiceImpl implements ITalonarioService {
+	
+	@Override
+	public boolean guardar(Talonario talonario) {
+		boolean hecho = false;
+		ConexionMySQL conexion = new ConexionMySQL();
+		Connection con = null;
+		PreparedStatement ps;
+		String sql = "INSERT INTO estudiante(carnet, nombres, apellidos) values(?,?,?)";
+		try {
+			con = ((ConexionMySQL) conexion).getConexion1();
+			ps = con.prepareStatement(sql);
+			ps.setString(1, talonario.getCarnet());
+			ps.setString(2, talonario.getDescripcion());
+			ps.setString(3, talonario.getFecha());
+			ps.setString(4, talonario.getEstado());
+			execute();
+			hecho = true;
+
+
+		}catch (SQLException e) {
+			System.out.print(e);
+			
+		}finally {
+			try {
+				con.close();
+			}catch (SQLException e) {
+				//TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
+		return hecho;
+	}
+	private void execute() {
+		// TODO Auto-generated method stub
+		
+	}
+	List<Talonario> talonarios = null;
+	
+	public TalonarioServiceImpl() {
+		talonarios = new LinkedList<>();
+	
+	
+	}
+	
+	@Override
+	public boolean guardar1(Talonario talonario) {
+		 
+		talonarios.add(talonario);
+		
+		return true;
+	}
+
+	
+
+	@Override
+	public Talonario recuperarI(Talonario talonario) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Talonario modificar(Talonario talonario) {
+		return talonario;
+		// TODO Auto-generated method stub
+		
+	
+		
+	}
+
+	@Override
+	public boolean eliminar(Talonario talonario) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public List<Talonario> recuperarTalonarios() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	
+	
+
+}
