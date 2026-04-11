@@ -9,10 +9,10 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.trips</groupId>
-	<artifactId>trips</artifactId>
+	<artifactId>TripsAN</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>TripsAN</name>
-	<description>Proyecto de trips para materia</description>
+	<description>Ejemplo de TripsAN</description>
 	<url/>
 	<licenses>
 		<license/>
@@ -61,12 +61,11 @@
 			<scope>test</scope>
 		</dependency>
 		<dependency>
-    <groupId>org.apache.logging.log4j</groupId>
-    <artifactId>log4j-core</artifactId>
-    <version>2.25.3</version>
-    <scope>compile</scope>
-</dependency>
-
+           <groupId>org.apache.logging.log4j</groupId>
+           <artifactId>log4j-core</artifactId>
+           <version>2.25.4</version>
+          <scope>compile</scope>
+        </dependency>
 	</dependencies>
 
 	<build>
