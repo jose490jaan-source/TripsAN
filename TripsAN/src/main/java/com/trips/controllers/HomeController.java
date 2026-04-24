@@ -18,7 +18,7 @@ public class HomeController {
 	@GetMapping ("/")
 	public String mostrarHome (Model model) {
 		
-		model.addAttribute("mensaje","Hola mundo tomorrowland");
+		model.addAttribute("mensaje","Hola mundo, soy Alfredo Alvarado");
 		return "home";
 	}
 	
@@ -30,7 +30,6 @@ public class HomeController {
 		lista.add("En los pueblos");
 		lista.add("En las playas");
 		model.addAttribute("listadoTrips", lista);
-
 		return "listado";
 	}
 	

@@ -18,6 +18,8 @@
                     <td>Costo</td>
                     <td>Descripcion</td>
                     <td>Destacado</td>
+                    <td>Detalle</td>
+                    <td>Eliminar</td>
                 </tr>
             </thead>
             <tbody>
@@ -34,6 +36,12 @@
                         <span th:if="${trip.destacado == 1}" class="badge bg-success">Si</span>
                         <span th:unless="${trip.destacado == 1}" class="badge bg-danger">No</span>
                     </td>
+                    <td>
+    					<a th:href="@{/trips/view/{id} (id=${trip.id})}" class="btn btn-success">Detalle</a>
+					</td>
+                    <td>
+    					<a th:href="@{/trips/delete(id=${trip.id})}" class="btn btn-danger">Eliminar</a>
+					</td>					
                 </tr>
             </tbody>
         </table>

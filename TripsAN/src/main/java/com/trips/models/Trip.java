@@ -8,7 +8,11 @@ public class Trip {
     private String descripcion;
     private Date fecha;
     private Double costo;
+	private int calificacion;
+	private String detalles;
+	private boolean activo;
     private Integer destacado; 
+	private Integer idCategoria;
     private String imagen="no-image.png";
     
     @Override
@@ -60,5 +64,37 @@ public class Trip {
 
 	public void setImagen(String imagen) {
 		this.imagen = imagen;
+	}
+
+	public Integer getIdCategoria() {
+		return idCategoria;
+	}
+
+	public void setIdCategoria(Integer idCategoria) {
+		this.idCategoria = idCategoria;
+	}
+
+	public int getCalificacion() {
+		return calificacion;
+	}
+
+	public void setCalificacion(int calificacion) {
+		this.calificacion = calificacion;
+	}
+
+	public String getDetalles() {
+		return detalles;
+	}
+
+	public void setDetalles(String detalles) {
+		this.detalles = detalles;
+	}
+
+	public boolean isActivo() {
+		return activo;
+	}
+
+	public void setActivo(boolean activo) {
+		this.activo = activo;
 	}
 }
