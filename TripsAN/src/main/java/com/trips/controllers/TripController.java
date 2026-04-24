@@ -13,17 +13,17 @@ public class TripController {
 	
 
 @GetMapping("/view/{id}")
-public String verDetalle(@PathVariable("id") int id, Model model) {
-    System.out.println("IdTrip es: " + id);
-    model.addAttribute ("idTrip" , id);
+public String verDetalle(@PathVariable("id") int idTrip, Model model) {
+    System.out.println("IdTrip es: " + idTrip);
+    model.addAttribute ("idTrip" , idTrip);
     
     return "trips/detalle";
     }
 
 @GetMapping("/delete")
-public String eliminar(@RequestParam("id") int id, Model model) {
-    System.out.println("IdTrip es: " + id);
-    model.addAttribute("id", id);
+public String eliminar(@RequestParam("id") int idTrip, Model model) {
+    System.out.println("IdTrip es: " + idTrip);
+    model.addAttribute("id", idTrip);
     return "mensaje"; 
     }
 }

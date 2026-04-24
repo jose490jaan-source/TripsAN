@@ -35,5 +35,7 @@ public class CategoriaTripController {
         return "categoriasTrip/listCategoria"; 
 	}
 	
+	
+	
 
 }
