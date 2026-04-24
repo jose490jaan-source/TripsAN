@@ -1,6 +1,6 @@
 package com.trips.models;
 
-import java.util.Date; // [cite: 85]
+import java.util.Date;
 
 public class Trip {
     private Integer id;
@@ -8,8 +8,13 @@ public class Trip {
     private String descripcion;
     private Date fecha;
     private Double costo;
-    private Integer destacado; // 
-
+	private int calificacion;
+	private String detalles;
+	private boolean activo;
+    private Integer destacado; 
+	private Integer idCategoria;
+    private String imagen="no-image.png";
+    
     @Override
     public String toString() {
         return "Trip [id=" + id + ", nombre=" + nombre + ", descripcion=" + descripcion + 
@@ -52,4 +57,44 @@ public class Trip {
     public void setDestacado(Integer destacado) { 
     	this.destacado = destacado; 
     		}
+
+	public String getImagen() {
+		return imagen;
+	}
+
+	public void setImagen(String imagen) {
+		this.imagen = imagen;
+	}
+
+	public Integer getIdCategoria() {
+		return idCategoria;
+	}
+
+	public void setIdCategoria(Integer idCategoria) {
+		this.idCategoria = idCategoria;
+	}
+
+	public int getCalificacion() {
+		return calificacion;
+	}
+
+	public void setCalificacion(int calificacion) {
+		this.calificacion = calificacion;
+	}
+
+	public String getDetalles() {
+		return detalles;
+	}
+
+	public void setDetalles(String detalles) {
+		this.detalles = detalles;
+	}
+
+	public boolean isActivo() {
+		return activo;
+	}
+
+	public void setActivo(boolean activo) {
+		this.activo = activo;
+	}
 }

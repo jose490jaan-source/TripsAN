@@ -6,28 +6,20 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
-<img th:src="@{/images/logo.png}" width="136" heigth="136">
     <div class="container mt-5">
         <h1>Trips en El Salvador</h1>
         <table class="table table-hover"> <thead>
                 <tr>
-                    <td>Foto</td>
                     <td>Id</td>
                     <td>Nombre</td>
                     <td>Fecha publicacion</td>
                     <td>Costo</td>
                     <td>Descripcion</td>
                     <td>Destacado</td>
-                    <td>Detalle</td>
-                    <td>Eliminar</td>
                 </tr>
             </thead>
             <tbody>
-                <tr th:each="trip : ${trips}"> 
-                    <td>
-                     <img th:src="@{/images/{img} (img=${trip.imagen})}" width="100" heigth="100">
-                    </td>
-                    <td th:text="${trip.id}"></td>
+                <tr th:each="trip : ${trips}"> <td th:text="${trip.id}"></td>
                     <td th:text="${trip.nombre}"></td>
                     <td th:text="${trip.fecha}"></td>
                     <td th:text="${trip.costo}"></td>
@@ -36,12 +28,6 @@
                         <span th:if="${trip.destacado == 1}" class="badge bg-success">Si</span>
                         <span th:unless="${trip.destacado == 1}" class="badge bg-danger">No</span>
                     </td>
-                    <td>
-    					<a th:href="@{/trips/view/{id} (id=${trip.id})}" class="btn btn-success">Detalle</a>
-					</td>
-                    <td>
-    					<a th:href="@{/trips/delete(id=${trip.id})}" class="btn btn-danger">Eliminar</a>
-					</td>					
                 </tr>
             </tbody>
         </table>

@@ -18,7 +18,7 @@ public class HomeController {
 	@GetMapping ("/")
 	public String mostrarHome (Model model) {
 		
-		model.addAttribute("mensaje","Hola mundo tomorrowland");
+		model.addAttribute("mensaje","Hola mundo, soy Alfredo Alvarado");
 		return "home";
 	}
 	
@@ -30,7 +30,6 @@ public class HomeController {
 		lista.add("En los pueblos");
 		lista.add("En las playas");
 		model.addAttribute("listadoTrips", lista);
-
 		return "listado";
 	}
 	
@@ -66,7 +65,9 @@ public class HomeController {
 	        trip1.setFecha(sdf.parse("10-05-2022"));
 	        trip1.setCosto(5.0);
 	        trip1.setDestacado(1);
+	        trip1.setImagen("Trip01.png");
 
+	        
 	        Trip trip2 = new Trip();
 	        trip2.setId(2);
 	        trip2.setNombre("Deslizadero en El Picnic");
@@ -74,6 +75,7 @@ public class HomeController {
 	        trip2.setFecha(sdf.parse("10-05-2022"));
 	        trip2.setCosto(5.0);
 	        trip2.setDestacado(1);
+	        trip2.setImagen("Trip02.png");
 
 	        Trip trip3 = new Trip();
 	        trip3.setId(3);
@@ -82,6 +84,7 @@ public class HomeController {
 	        trip3.setFecha(sdf.parse("10-05-2022"));
 	        trip3.setCosto(1.0);
 	        trip3.setDestacado(0);
+	        trip3.setImagen("Trip03.png");
 
 	        Trip trip4 = new Trip();
 	        trip4.setId(4);
