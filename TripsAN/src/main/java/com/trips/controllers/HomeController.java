@@ -5,22 +5,34 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.LinkedList;
 import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+
 import com.trips.models.Trip;
+import com.trips.services.ITripService;
 
 @Controller
 public class HomeController {
 	
-	
-	
-	@GetMapping ("/")
-	public String mostrarHome (Model model) {
-		
-		model.addAttribute("mensaje","Hola mundo, soy Alfredo Alvarado");
-		return "home";
-	}
+	@Autowired
+    private ITripService tripService;
+
+    @GetMapping("/")
+    public String mostrarHome(Model model) {
+        List<Trip> lista = tripService.buscarTodos();
+        model.addAttribute("trips", lista);
+        return "home";
+    }
+
+    @GetMapping("/tabla")
+    public String mostrarTabla(Model model) {
+        List<Trip> lista = tripService.buscarTodos();
+        model.addAttribute("trips", lista);
+        return "tabla";
+    }
 	
 	@GetMapping ("/listado")
 	public String mostrarListado(Model model) {
@@ -33,12 +45,6 @@ public class HomeController {
 		return "listado";
 	}
 	
-	@GetMapping("/tabla")
-    public String mostrarTabla(Model model) {
-        List<Trip> lista = getTrips();
-        model.addAttribute("trips", lista);
-        return "tabla";
-    }
 	
 	@GetMapping("/detalle")
 	public String mostrarDetalle(Model model) {
@@ -105,5 +111,6 @@ public class HomeController {
 
 	    return lista;
 	}
+	
 
 }
