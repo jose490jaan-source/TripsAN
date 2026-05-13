@@ -8,6 +8,8 @@ import com.trips.models.Rol;
 public class RolServiceImpl implements IRolService {
 	List<Rol> lista = null;
 	public RolServiceImpl() {
+		Simple Date
+	}
 
     @Autowired
     private RolRepository rolRepository;
